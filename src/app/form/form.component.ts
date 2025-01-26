@@ -1,13 +1,18 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+//import { TextField, Button, MenuItem, InputAdornment, IconButton } from '@mui/material';
+//import { Visibility, VisibilityOff } from '@mui/icons-material';
+//import { Input, Label, Select, Textarea } from '@shadcn/ui';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css'],
-})
+}) 
+
 export class FormComponent {
   @Input() record: any = null; // Holds the record to edit
   @Output() formSubmit = new EventEmitter<any>();
+
 
   formData: any = {
     role: '',
@@ -16,7 +21,10 @@ export class FormComponent {
     phoneNumber: '',
     accountStatus: '',
   };
-
+  passwordFieldType: string = 'password';
+  togglePasswordVisibility() {
+    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
+  }
   selectedRole: string = '';
   roles: string[] = ['Admin', 'User', 'Guest'];
   ngOnChanges() {

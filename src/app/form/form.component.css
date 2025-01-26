@@ -1,15 +1,26 @@
 .form-container {
-  width: 60%;
+  width: 100%;
+  max-width: 600px;
   margin: auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: #8eb3d4; /* Pastel Blue */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container:hover {
+  transform: scale(1.02);
 }
 
 h1, h2 {
   text-align: center;
+  color: #333;
+  font-size: 24px;
   margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 form {
@@ -33,17 +44,87 @@ input, textarea, select, button {
   border-radius: 4px;
 }
 
+.input-radio {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.input-radio input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.input-radio:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.input-radio input:checked ~ .checkmark {
+  background-color: #66b3ff; /* Updated color */
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.input-radio input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.input-radio .checkmark:after {
+  top: 9px;
+  left: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+}
+
 button {
   cursor: pointer;
-  background-color: #007bff;
-  color: white;
   border: none;
   border-radius: 4px;
   padding: 10px;
+  font-size: 14px;
 }
 
-button:hover {
-  background-color: #0056b3;
+button[type="submit"] {
+  background-color: #28a745; /* Green for submit */
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+button[type="button"] {
+  background-color: #dc3545; /* Red for clear */
+  color: white;
+  margin-left: 10px; /* Space between buttons */
+}
+
+button[type="button"]:hover {
+  background-color: #c82333;
 }
 
 table {
@@ -61,8 +142,4 @@ th, td {
   padding: 10px;
   border: 1px solid #ddd;
   text-align: left;
-}
-
-button {
-  cursor: pointer;
 }

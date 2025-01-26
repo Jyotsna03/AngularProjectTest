@@ -1,97 +1,99 @@
 <div class="form-container">
-    <h1> User-Admin Form</h1>
-    <h2>{{ record ? 'Edit Record' : 'Add Record' }}</h2>
+    <h1>User-Admin Form</h1>
     <form (ngSubmit)="onSubmit()" #dynamicForm="ngForm">
-        <!-- Radio Buttons for Role Selection -->
-        <div>
-            <label>
-                Role:
-                <select [(ngModel)]="selectedRole" name="role" required>
-                    <option value="" disabled>Select a Role</option>
-                    <option value="User">User</option>
-                    <option value="Admin">Admin</option>
-                </select>
-            </label>
+        <!-- Role Selection -->
+        <div class="form-group">
+            <label>Role:</label>
+            <div class="radio-group">
+                <label class="radio-option">
+                    <input type="radio" [(ngModel)]="selectedRole" name="role" value="User" required />
+                    User
+                </label>
+                <label class="radio-option">
+                    <input type="radio" [(ngModel)]="selectedRole" name="role" value="Admin" required />
+                    Admin
+                </label>
+            </div>
         </div>
 
         <!-- User-Specific Fields -->
         <div *ngIf="selectedRole === 'User'">
-            <label>
-                Full Name:
-                <input [(ngModel)]="formData.fullName" name="fullName" required />
-            </label>
-            <label>
-                Date of Birth:
+            <div class="form-group">
+                <label>Full Name:</label>
+                <input type="text" [(ngModel)]="formData.fullName" name="fullName" required />
+            </div>
+            <div class="form-group">
+                <label>Date of Birth:</label>
                 <input type="date" [(ngModel)]="formData.dateOfBirth" name="dateOfBirth" required />
-            </label>
-            <label>
-                Phone Number:
+            </div>
+            <div class="form-group">
+                <label>Phone Number:</label>
                 <input type="tel" [(ngModel)]="formData.phoneNumber" name="phoneNumber" required />
-            </label>
-            <label>
-                User ID:
-                <input [(ngModel)]="formData.userId" name="userId" required />
-            </label>
-            <label>
-                User Department:
-                <input [(ngModel)]="formData.department" name="department" required />
-            </label>
-            <label>
-                Address:
+            </div>
+            <div class="form-group">
+                <label>User ID:</label>
+                <input type="text" [(ngModel)]="formData.userId" name="userId" required />
+            </div>
+            <div class="form-group">
+                <label>User Department:</label>
+                <input type="text" [(ngModel)]="formData.department" name="department" required />
+            </div>
+            <div class="form-group">
+                <label>Address:</label>
                 <textarea [(ngModel)]="formData.address" name="address" required></textarea>
-            </label>
-            <label>
-                Registration Date:
+            </div>
+            <div class="form-group">
+                <label>Registration Date:</label>
                 <input type="date" [(ngModel)]="formData.registrationDate" name="registrationDate" required />
-            </label>
-            <label>
-                Account Status:
+            </div>
+            <div class="form-group">
+                <label>Account Status:</label>
                 <select [(ngModel)]="formData.accountStatus" name="accountStatus" required>
                     <option value="Active">Active</option>
                     <option value="Inactive">Inactive</option>
                 </select>
-            </label>
+            </div>
         </div>
 
         <!-- Admin-Specific Fields -->
         <div *ngIf="selectedRole === 'Admin'">
-            <label>
-                Full Name:
-                <input [(ngModel)]="formData.fullName" name="fullName" required />
-            </label>
-            <label>
-                Date of Birth:
+            <div class="form-group">
+                <label>Full Name:</label>
+                <input type="text" [(ngModel)]="formData.fullName" name="fullName" required />
+            </div>
+            <div class="form-group">
+                <label>Date of Birth:</label>
                 <input type="date" [(ngModel)]="formData.dateOfBirth" name="dateOfBirth" required />
-            </label>
-            <label>
-                Phone Number:
+            </div>
+            <div class="form-group">
+                <label>Phone Number:</label>
                 <input type="tel" [(ngModel)]="formData.phoneNumber" name="phoneNumber" required />
-            </label>
-            <label>
-                Admin ID:
-                <input [(ngModel)]="formData.adminId" name="adminId" required />
-            </label>
-            <label>
-                Role:
-                <input [(ngModel)]="formData.role" name="role" required />
-            </label>
-            <label>
-                Account Status:
+            </div>
+            <div class="form-group">
+                <label>Admin ID:</label>
+                <input type="text" [(ngModel)]="formData.adminId" name="adminId" required />
+            </div>
+            <div class="form-group">
+                <label>Role:</label>
+                <input type="text" [(ngModel)]="formData.role" name="role" required />
+            </div>
+            <div class="form-group">
+                <label>Account Status:</label>
                 <select [(ngModel)]="formData.accountStatus" name="accountStatus" required>
                     <option value="Active">Active</option>
                     <option value="Inactive">Inactive</option>
                 </select>
-            </label>
-            <label>
-                Access Level:
+            </div>
+            <div class="form-group">
+                <label>Access Level:</label>
                 <input type="number" [(ngModel)]="formData.accessLevel" name="accessLevel" required />
-            </label>
+            </div>
         </div>
 
         <!-- Buttons -->
-        <div>
-            <button type="submit">{{ record ? 'Update' : 'Submit' }}</button>
-            <button type="button" (click)="onClear()">Clear</button>
+        <div class="button-group">
+            <button type="submit" class="btn-submit">{{ record ? 'Update' : 'Submit' }}</button>
+            <button type="button" class="btn-clear" (click)="onClear()">Clear</button>
         </div>
     </form>
 </div>
