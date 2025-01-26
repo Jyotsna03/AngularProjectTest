@@ -13,6 +13,7 @@ import { DataSourceService } from './services/datasource.services';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { MatInputModule } from '@angular/material/input';
     AppComponent,
     FormComponent,
     TableComponent,
-    SignupComponent
+    SignupComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

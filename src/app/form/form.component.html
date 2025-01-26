@@ -1,9 +1,10 @@
 <div class="form-container">
     <h1>User-Admin Form</h1>
     <form (ngSubmit)="onSubmit()" #dynamicForm="ngForm">
+
         <!-- Role Selection -->
         <div class="form-group">
-            <label>Role:</label>
+
             <div class="radio-group">
                 <label class="radio-option">
                     <input type="radio" [(ngModel)]="selectedRole" name="role" value="User" required />

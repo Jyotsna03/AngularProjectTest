@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
+
 .form-container {
   width: 100%;
   max-width: 600px;
@@ -30,25 +32,29 @@ form {
 }
 
 label {
-  font-size: 14px;
+  font-size: 15x;
   font-weight: bold;
   display: flex;
   flex-direction: column;
 }
 
-input, textarea, select, button {
-  padding: 8px;
+input, textarea, select {
+  padding: 10px;
   font-size: 14px;
   margin-top: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
+  width: 100%; /* Ensures inputs take the full width of the container */
+  box-sizing: border-box; /* Makes sure padding doesn't affect the width */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effect */
 }
+
 
 .input-radio {
   display: block;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  padding-left: 25px;
+  margin-bottom: 25px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -75,7 +81,7 @@ input, textarea, select, button {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
+  height: 35px;
   width: 25px;
   background-color: #eee;
   border-radius: 50%;
@@ -143,3 +149,6 @@ th, td {
   border: 1px solid #ddd;
   text-align: left;
 }
+
+
+
