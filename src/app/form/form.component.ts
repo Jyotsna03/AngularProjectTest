@@ -1,15 +1,46 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  styleUrls: ['./form.component.css'],
 })
-export class FormComponent implements OnInit {
+export class FormComponent {
+  @Input() record: any = null; // Holds the record to edit
+  @Output() formSubmit = new EventEmitter<any>();
 
-  constructor() { }
+  formData: any = {
+    role: '',
+    fullName: '',
+    dateOfBirth: '',
+    phoneNumber: '',
+    accountStatus: '',
+  };
 
-  ngOnInit(): void {
+  selectedRole: string = '';
+  roles: string[] = ['Admin', 'User', 'Guest'];
+  ngOnChanges() {
+    if (this.record) {
+      this.formData = { ...this.record };
+    } else {
+      this.onClear();
+    }
   }
 
+  onSubmit() {
+    this.formData.role = this.selectedRole;
+    this.formSubmit.emit(this.formData);
+    this.onClear();
+  }
+
+  onClear() {
+    this.formData = {
+      role: '',
+      fullName: '',
+      dateOfBirth: '',
+      phoneNumber: '',
+      accountStatus: '',
+    };
+    this.selectedRole = '';
+  }
 }

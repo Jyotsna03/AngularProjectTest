@@ -1,1 +1,97 @@
-<p>form works!</p>
+<div class="form-container">
+    <h1> User-Admin Form</h1>
+    <h2>{{ record ? 'Edit Record' : 'Add Record' }}</h2>
+    <form (ngSubmit)="onSubmit()" #dynamicForm="ngForm">
+        <!-- Radio Buttons for Role Selection -->
+        <div>
+            <label>
+                Role:
+                <select [(ngModel)]="selectedRole" name="role" required>
+                    <option value="" disabled>Select a Role</option>
+                    <option value="User">User</option>
+                    <option value="Admin">Admin</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- User-Specific Fields -->
+        <div *ngIf="selectedRole === 'User'">
+            <label>
+                Full Name:
+                <input [(ngModel)]="formData.fullName" name="fullName" required />
+            </label>
+            <label>
+                Date of Birth:
+                <input type="date" [(ngModel)]="formData.dateOfBirth" name="dateOfBirth" required />
+            </label>
+            <label>
+                Phone Number:
+                <input type="tel" [(ngModel)]="formData.phoneNumber" name="phoneNumber" required />
+            </label>
+            <label>
+                User ID:
+                <input [(ngModel)]="formData.userId" name="userId" required />
+            </label>
+            <label>
+                User Department:
+                <input [(ngModel)]="formData.department" name="department" required />
+            </label>
+            <label>
+                Address:
+                <textarea [(ngModel)]="formData.address" name="address" required></textarea>
+            </label>
+            <label>
+                Registration Date:
+                <input type="date" [(ngModel)]="formData.registrationDate" name="registrationDate" required />
+            </label>
+            <label>
+                Account Status:
+                <select [(ngModel)]="formData.accountStatus" name="accountStatus" required>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </label>
+        </div>
+
+        <!-- Admin-Specific Fields -->
+        <div *ngIf="selectedRole === 'Admin'">
+            <label>
+                Full Name:
+                <input [(ngModel)]="formData.fullName" name="fullName" required />
+            </label>
+            <label>
+                Date of Birth:
+                <input type="date" [(ngModel)]="formData.dateOfBirth" name="dateOfBirth" required />
+            </label>
+            <label>
+                Phone Number:
+                <input type="tel" [(ngModel)]="formData.phoneNumber" name="phoneNumber" required />
+            </label>
+            <label>
+                Admin ID:
+                <input [(ngModel)]="formData.adminId" name="adminId" required />
+            </label>
+            <label>
+                Role:
+                <input [(ngModel)]="formData.role" name="role" required />
+            </label>
+            <label>
+                Account Status:
+                <select [(ngModel)]="formData.accountStatus" name="accountStatus" required>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+            </label>
+            <label>
+                Access Level:
+                <input type="number" [(ngModel)]="formData.accessLevel" name="accessLevel" required />
+            </label>
+        </div>
+
+        <!-- Buttons -->
+        <div>
+            <button type="submit">{{ record ? 'Update' : 'Submit' }}</button>
+            <button type="button" (click)="onClear()">Clear</button>
+        </div>
+    </form>
+</div>

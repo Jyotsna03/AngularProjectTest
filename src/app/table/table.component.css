@@ -1,0 +1,74 @@
+/* Container Styling */
+.table-container {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* Table Header Styling */
+table thead tr {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+
+table thead th {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+/* Table Body Styling */
+table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.3s ease;
+}
+
+table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+table tbody td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+/* Button Styling */
+button {
+  padding: 6px 12px;
+  font-size: 14px;
+  color: white;
+  background-color: #f44336;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  table {
+      font-size: 14px;
+  }
+
+  button {
+      padding: 5px 10px;
+      font-size: 12px;
+  }
+}

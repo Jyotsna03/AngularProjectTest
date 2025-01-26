@@ -1,1 +1,24 @@
-<p> table works!</p>
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Full Name</th>
+                <th>Date of Birth</th>
+                <th>Phone Number</th>
+                <th>Account Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let record of records; let i = index">
+                <td>{{ record.role }}</td>
+                <td>{{ record.fullName }}</td>
+                <td>{{ record.dateOfBirth }}</td>
+                <td>{{ record.phoneNumber }}</td>
+                <td>{{ record.accountStatus }}</td>
+                <td><button (click)="onDelete(i)">Delete</button><button (click)="onEdit(record)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
