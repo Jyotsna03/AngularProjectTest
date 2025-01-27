@@ -9,8 +9,7 @@ import { TableComponent } from './table/table.component';
 const routes: Routes = [
   { path: '', component: SignupComponent }, // Default route 
   { path: 'form', component: DashboardComponent }, // Form route
-  { path: 'table', component: TableComponent }
- 
+  
 ];
 
 @NgModule({

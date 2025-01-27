@@ -10,8 +10,8 @@ export class AppComponent implements OnInit {
   title(title: any) {
     throw new Error('Method not implemented.');
   }
-  records: any[] = []; // Holds all records
-  editRecord: any = null; // Record being edited
+  records: any[] = []; 
+  editRecord: any = null; 
 
   constructor(private dataService: DataSourceService) {}
 
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
       }
     } else {
       // Add new record
-      const newRecord = { ...record, id: this.records.length + 1 };
+      const newRecord = { ...record, id: this.records.length  };
       this.records.push(newRecord);
     }
     this.editRecord = null;
