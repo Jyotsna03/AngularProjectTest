@@ -24,7 +24,7 @@ export class FormComponent {
 
  
   selectedRole: string = '';
-  roles: string[] = ['Admin', 'User', 'Guest'];
+  roles: string[] = ['Admin', 'User'];
   ngOnChanges() {
     if (this.record) {
       this.formData = { ...this.record };
