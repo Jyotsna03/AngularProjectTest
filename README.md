@@ -15,7 +15,7 @@ This project is a web app where users start by signing up on the homepage. After
 To see this project run
 
 ```bash
-  https://angular-project-test-t8kw.vercel.app/form
+  https://angular-project-one-kohl.vercel.app/
 ```
 
 
