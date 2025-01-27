@@ -21,10 +21,8 @@ export class FormComponent {
     phoneNumber: '',
     accountStatus: '',
   };
-  passwordFieldType: string = 'password';
-  togglePasswordVisibility() {
-    this.passwordFieldType = this.passwordFieldType === 'password' ? 'text' : 'password';
-  }
+
+ 
   selectedRole: string = '';
   roles: string[] = ['Admin', 'User', 'Guest'];
   ngOnChanges() {
